@@ -1,0 +1,26 @@
+{
+    "name": "moviedb-1",
+    "version": "1.0.0",
+    "description": "codi assignment movie db",
+    "main": "index.js",
+    "scripts": {
+        "test": "hello "
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/farahali98/MovieDB-1.git"
+    },
+    "keywords": [
+        "hi"
+    ],
+    "author": "farah",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/farahali98/MovieDB-1/issues"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1", // this should be there
+        "dev": "nodemon index.js"
+    },
+    "homepage": "https://github.com/farahali98/MovieDB-1#readme"
+}
