@@ -16,3 +16,13 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running at: http://localhost:${PORT}/`);
 });
+app.get('/test', (req, res) => res.send({ status: 200, message: "ok" }))
+
+
+
+const mydate = new Date();
+const time = mydate.getHours() + ":" + mydate.getMinutes();
+app.get('/time', function(req, res) {
+
+    res.send({ status: 200, message: time });
+});
