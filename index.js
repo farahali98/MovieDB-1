@@ -124,3 +124,21 @@ app.get('/movies/read/by-title', (req, res) => {
         data: movies1
     })
 })
+
+//step7
+app.get('/movies/read/id/:id', (req, res) => {
+
+    //taking the index of the array as the id 
+    movie_id = req.params.id;
+
+    if (movie_id < movies.length) { //since the indexing of movies starts from 0 we have till movie_id=3
+        res.send({ status: 200, data: movies[movie_id] })
+
+    } else {
+        res.send({
+            error: true,
+            status: 404,
+            message: 'the movie ' + movie_id + ' does not exist'
+        });
+    }
+})
