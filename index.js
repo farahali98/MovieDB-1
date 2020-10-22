@@ -91,3 +91,36 @@ app.get('/movies/read', function(req, res) {
 
 
 //Step6
+//sort by date
+app.get('/movies/read/by-date', (req, res) => {
+    res.send({
+        status: 200,
+        data: movies.sort((a, b) => a.year - b.year)
+    })
+})
+
+//sort by rating
+
+app.get('/movies/read/by-rating', (req, res) => {
+    res.send({
+        status: 200,
+        data: movies.sort((a, b) => b.rating - a.rating)
+    })
+})
+
+//sort by title
+app.get('/movies/read/by-title', (req, res) => {
+    movies1 = movies.sort((a, b) => {
+        if (a.title < b.title) {
+            return -1;
+        }
+        if (a.title > b.title) {
+            return 1;
+        }
+        return 0;
+    });
+    res.send({
+        status: 200,
+        data: movies1
+    })
+})
