@@ -26,3 +26,32 @@ app.get('/time', function(req, res) {
 
     res.send({ status: 200, message: time });
 });
+
+app.get('/hello/:ID', (req, res) => {
+    user_id = req.params;
+    res.send({ status: 200, message: "Hello, " + user_id.ID })
+})
+app.get('/search', (req, res) => {
+    const search = req.query.s;
+
+    if (typeof search != 'undefined') {
+        // Search string applied
+        const response = {
+            status: 200,
+            message: "ok",
+            data: search
+        };
+
+        res.send(response);
+    } else {
+        const response = {
+            status: 500,
+            error: true,
+            message: "you have to provide a search"
+        };
+
+
+        res.status(500);
+        res.send(response);
+    }
+});
