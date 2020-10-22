@@ -66,7 +66,7 @@ const movies = [
     { title: 'Brazil', year: 1985, rating: 8 },
     { title: 'الإرهاب والكباب‎', year: 1992, rating: 6.2 }
 ]
-pp.delete('/movies/delete', function(req, res) {
+app.delete('/movies/delete', function(req, res) {
     res.send('delete movie')
 })
 
@@ -79,6 +79,15 @@ app.post('/movies/create', function(req, res) {
 })
 
 app.get('/movies/read', function(req, res) {
-
     res.send({ status: 200, data: movies })
 })
+
+
+
+
+
+
+
+
+
+//Step6
